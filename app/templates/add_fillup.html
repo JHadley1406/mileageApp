@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+Add Fillup
+    <form action="{{ url_for('add_fillup', vehicleId=vehicleId) }}" method="POST">
+        {{ form.hidden_tag() }}
+         Enter mileage at fillup:<br>
+        {{ form.currentMileage }}<br>
+        Enter the amount of fuel in gallons:<br>
+        {{ form.fuelGallons }}<br>
+        Enter the price per gallon:<br>
+        {{ form.fuelPrice }}<br>
+        <input type="submit" value="Submit">
+
+    </form>
+{% endblock %}

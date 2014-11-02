@@ -1,0 +1,12 @@
+body {
+
+    background-color: #888888;
+}
+.vehicle{
+    width: 600px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+}
+.vehicle span{
+    margin: 0 20px 0 20px;
+}

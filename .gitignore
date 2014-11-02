@@ -1,0 +1,6 @@
+*.pyc
+requirements.txt
+app.db
+/.git
+/.idea
+/ven

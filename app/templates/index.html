@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="fillups">
+    Index Page:
+    {% if vehicles %}
+    There are some vehicles in the database<br>
+    {% endif %}
+    {% for vehicle in vehicles %}
+    <div class="vehicle">
+        <span><a href="{{ url_for('add_fillup', vehicleId=vehicle.id) }}">{{ vehicle.vehicleName }}</a> </span><span> Avg MPG: {{ vehicle.averageMpg }} </span><span> Current Mileage: {{ vehicle.currentMileage }}</span><br>
+        Fillups<br>
+        <ul>
+        <span>Date</span>|<span>MPG</span>|<span>Gallons</span>|<span>Price</span>
+        {% if fillups %}
+        {% for fillup in fillups %}
+            {% if fillup.vehicleId == vehicle.id %}
+            <li><span>{{ fillup.createdOn }}</span>|<span>{{ fillup.fillupMpg }}Mpg</span>|<span>{{ fillup.fuelGallons }} Gallons</span>|<span>${{ fillup.fuelPrice }}</span></li>
+            {% endif %}
+        {% endfor %}
+        {% endif %}
+        </ul>
+    </div>
+    {% endfor %}
+    <a href="{{ url_for('add_vehicle') }}">Add a Vehicle</a>
+
+</div>
+{% endblock %}

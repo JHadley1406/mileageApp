@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+Add Vehicle
+    <form action="{{ url_for('add_vehicle') }}" method="POST">
+        {{ form.hidden_tag() }}
+        Enter a name for this vehicle:<br>
+        {{ form.vehicleName }}<br>
+        Enter the starting mileage for this vehicle:<br>
+        {{ form.startingMileage }}<br>
+        <input type="submit" value="Submit">
+
+    </form>
+{% endblock %}
